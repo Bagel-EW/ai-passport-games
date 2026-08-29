@@ -1,0 +1,31 @@
+# --- 目标芯片 ---
+CONFIG_IDF_TARGET="esp32c3"
+# 注:ESP32-C3 无 PSRAM,故不设 CONFIG_SPIRAM。
+
+# --- Flash ---
+# FoloToy AI Passport 的所有硬件批次均使用 8MB Flash。
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+# 烧录时按实际探测容量回写镜像头。
+CONFIG_ESPTOOLPY_HEADER_FLASHSIZE_UPDATE=y
+
+# --- 分区表 ---
+# WiFi+TLS+MQTT 后固件约 1.6MB,默认单 APP 表(1MB)不够,用自定义表给 factory 4M。
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# --- 控制台:USB-Serial-JTAG(C3 原生 USB,GPIO18/19)---
+# 不用 UART0:其默认 TX=GPIO21 与本板背光引脚冲突。
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y
+
+# --- LVGL ---
+CONFIG_LV_COLOR_DEPTH_16=y
+CONFIG_LV_FONT_MONTSERRAT_14=y
+CONFIG_LV_FONT_MONTSERRAT_20=y
+# LVGL 内置 malloc 池大小(KB)。独立静态区,配太大会挤占系统 RAM 影响 TLS/MQTT。
+# 48KB 时 UI 对象(~43KB)+渲染耗尽导致 SW 渲染卡死;96KB 时 TLS 无内存失败。
+# 精简(LED 环 16 段)后 72KB 平衡两者。
+CONFIG_LV_MEM_SIZE_KILOBYTES=72
+
+# --- 系统 ---
+CONFIG_FREERTOS_HZ=1000

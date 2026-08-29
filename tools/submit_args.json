@@ -1,0 +1,11 @@
+{
+  "title_zh": "AI 通行证 · 欢乐游戏厅",
+  "title_en": "AI Passport · Pocket Arcade",
+  "description_zh": "把口袋里的 AI 通行证变成一台随身游戏机。多人模式举起它就能开派对——真心话大冒险、国王游戏、俄罗斯转盘、命运签，2 到 8 人轮流抽签，最后由「酒神」给今晚干杯收场。一个人也不无聊：打砖块、贪吃蛇、翻牌配对三款经典随时开玩，翻牌配对还有 3 档难度和常驻的 TOP3 排行榜。像素界面、按键操作、开机即有音乐，聚会、通勤、睡前都能来一局。",
+  "description_en": "Turn your pocket AI Passport into a handheld game console. In Party mode it becomes an instant ice-breaker for 2–8 players — Truth or Dare, King's Game, Russian Roulette and Fate Draw, taking turns by random draw, then crowned by the \"God of Wine\" to close the night. Solo is never boring either: Breakout, Snake and Memory Match are always ready, with Memory offering three difficulty tiers and a persistent TOP-3 leaderboard. Pixel UI, button controls, music on boot — perfect for parties, commutes, or a round before sleep.",
+  "source_url": "https://github.com/Bagel-EW/ai-passport-games",
+  "cover": "cover_1152x1536.png",
+  "firmware": "build4/passport_games.bin",
+  "screen_capture": "capture_screen.png",
+  "confirmed": true
+}

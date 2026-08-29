@@ -1,0 +1,30 @@
+# 构建产物（所有 build 变体）
+build/
+build[0-9]*/
+build_*/
+
+# ESP-IDF 依赖（通过 idf-component.yml 拉取）
+managed_components/
+dependencies.lock
+
+# 固件 / 调试二进制
+*.bin
+diag*.bin
+bambumonitor.bin
+
+# 日志与诊断产物
+*.log
+build_log*.txt
+build4_*.txt
+build6_log.txt
+flash_log*.txt
+build_fap.log
+*.fap-capture.json
+
+# 本地配置
+sdkconfig
+sdkconfig.old
+.vscode/
+main/secrets.h
+__pycache__/
+*.pyc
